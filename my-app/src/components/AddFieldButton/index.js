@@ -1,6 +1,6 @@
 import './index.css';
 
-function AddFieldButton({pageType}) {
+export default function AddFieldButton({pageType}) {
 	if (pageType === 'optionsProsConsInput') {
 		
 	}

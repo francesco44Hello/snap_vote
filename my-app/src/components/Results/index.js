@@ -1,6 +1,6 @@
 import './index.css';
 
-function Results({pageType}) {
+export default function Results({pageType}) {
 
 	function randomiser() {
 
