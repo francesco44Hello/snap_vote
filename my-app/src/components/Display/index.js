@@ -1,3 +1,4 @@
+import { useState } from "react";
 function Display() {
 
 	const [pageType, setPageType] = useState('Start'); 
@@ -8,17 +9,7 @@ function Display() {
 
 	return (
 		<div>
-			<Header />
-				<PageHeader pageType={pageType} />
-				<CountdownTimer pageType={pageType}/>
-				<UsernameIndicator pageType={pageType} />
-			<Body />
-				<DisplayOptionVote pageType={pageType} />
-				<MultipleChoiceInput pageType={pageType} />
-				<TextInput pageType={pageType} />
-				<MultipleChoiceInput pageType={pageType} />
-				<AddFieldButton pageType={pageType} />
-				<SubmitButton pageType={pageType} changePage={changePage} />
+			
 		</div>    
 	);
 }
