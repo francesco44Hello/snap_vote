@@ -1,58 +1,84 @@
-function Display() {
+import Header from '../Header/index';
+import Body from '../Body/index';
+import {useState} from 'react';
 
-	const [pageType, setPageType] = useState('Start'); 
+const pageTypes = [
+	"start",
+	"decision-input",
+	"options-input",
+	"pros-cons-input",
+	"pros-cons-comment",
+	"pros-cons-vote",
+	"pros-cons-results",
+	"weighted-vote-input",
+	"weighted-vote-results",
+	"randomiser",
+	"final-results"
+]
 
-	function changePage(whatPage) {
-		setPageType(whatPage);
+export default function Display() {
+	const [decisionTitle, setDecisionTitle] = useState("");
+	const [voters, setVoters] = useState(0);
+	const [options, setOptions] = useState([]);
+	const [proCon, setProCon] = useState([]);
+
+	function inputDecisionName(event){
+		setDecisionTitle(event.target.value)
+	}
+
+	function inputNumberOfUsers(event){
+		setVoters(event.target.value)
+	}
+
+	function inputOptions(event){
+		if (event.target.name === "input-1"){
+			setOptions([...options, event.target.value]);
+		}
+		if (event.target.name === "input-2"){
+			setOptions([...options, event.target.value]);
+		}
+		if (event.target.name === "input-3"){
+			setOptions([...options, event.target.value]);
+		}
+		if (event.target.name === "input-4"){
+			setOptions([...options, event.target.value]);
+		}
+	}
+
+	function inputProCon(event){
+		if (event.target.name === "pro-con-1"){
+			setProCon([...proCon, event.target.value]);
+		}
+		if (event.target.name === "pro-con-2"){
+			setProCon([...proCon, event.target.value]);
+		}
+		if (event.target.name === "pro-con-3"){
+			setProCon([...proCon, event.target.value]);
+		}
+		if (event.target.name === "pro-con-4"){
+			setProCon([...proCon, event.target.value]);
+		}
+	}
+
+	// Type of page
+	const [pageType, setPageType] = useState(pageTypes[0]); 
+
+	function changePage() {
+		setPageType(pageType + 1);
 	}
 
 	return (
 		<div>
-			<Header />
-				<PageHeader pageType={pageType} />
-				<CountdownTimer pageType={pageType}/>
-				<UsernameIndicator pageType={pageType} />
-			<Body />
-				<DisplayOptionVote pageType={pageType} />
-				<MultipleChoiceInput pageType={pageType} />
-				<TextInput pageType={pageType} />
-				<MultipleChoiceInput pageType={pageType} />
-				<AddFieldButton pageType={pageType} />
-				<SubmitButton pageType={pageType} changePage={changePage} />
+			<Header decisionTitle={decisionTitle}/>
+			<Body 
+				decisionTitle={decisionTitle} 
+				inputDecisionName={inputDecisionName} inputNumberOfUsers={inputNumberOfUsers} 
+				pageType={pageType} 
+				changePage={changePage} 
+				inputOptions={inputOptions}
+				inputProCon={inputProCon}
+				options={options}
+			/>
 		</div>    
 	);
 }
-
-
-function DisplayOptionVote({pageType}) {
-
-	function randomiser() {
-
-	}
-
-	function weightedVoting() {
-
-	}
-
-	if (pageType === 'intro') {
-		return <div>
-
-		</div>
-	}
-}
-
-function PageHeader({pageType}) {
-	if (pageType === 'inputOptions') {
-		return <input>Test</input>
-	} else {
-		return <h1>Test</h1>
-	}
-}
-
-function AddFieldButton({pageType}) {
-	if (pageType === 'optionsProsConsInput') {
-		
-	}
-}
-
-export default Display;
