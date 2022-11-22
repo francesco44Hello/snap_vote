@@ -7,11 +7,11 @@ import AllOptions from '../AllOptions/index';
 import Results from '../Results/index';
 
 
-export default function Body({pageType, inputDecisionName}) {
+export default function Body({pageType, inputDecisionName, inputNumberOfUsers, changePage}) {
     return (<div>
         <AddFieldButton pageType={pageType} />
-        {/* <SubmitButton pageType={pageType} changePage={changePage} /> */}
-        <SingleInputBox pageType={pageType} inputDecisionName={inputDecisionName} />
+        <SubmitButton pageType={pageType} changePage={changePage} />
+        <SingleInputBox pageType={pageType} inputDecisionName={inputDecisionName} inputNumberOfUsers={inputNumberOfUsers} />
         <MultipleChoiceInput pageType={pageType} />
         <AllOptions pageType={pageType} />
         <Results pageType={pageType} />

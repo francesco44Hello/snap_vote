@@ -1,7 +1,15 @@
 import './index.css';
 
 export default function AddFieldButton({pageType}) {
-	if (pageType === 'optionsProsConsInput') {
-		
+
+	switch (pageType) {
+		case "options-input":
+			return <button>+1</button>
+		case "pro-cons-input":
+			return <button>+1</button>
+		case "pros-cons-comment":
+			return <button>+1</button>
+		default:
+			break;
 	}
 }

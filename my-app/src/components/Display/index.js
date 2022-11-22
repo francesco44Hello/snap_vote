@@ -18,22 +18,23 @@ const pageTypes = [
 
 export default function Display() {
 	const [decisionTitle, setDecisionTitle] = useState("");
-	const pageType = "options-input";
 
 	function inputDecisionName(event){
 		setDecisionTitle(event.target.value)
 	}
 
-	// const [pageType, setPageType] = useState(pageTypes[0]); 
+	// Type of page
+	const [pageType, setPageType] = useState(pageTypes[0]); 
 
-	// function changePage(whatPage) {
-	// 	setPageType(whatPage);
-	// }
+	function changePage() {
+		setPageType(pageType + 1);
+
+	}
 
 	return (
 		<div>
 			<Header decisionTitle={decisionTitle}/>
-			<Body decisionTitle={decisionTitle} inputDecisionName={inputDecisionName} pageType={pageType}/>
+			<Body decisionTitle={decisionTitle} inputDecisionName={inputDecisionName} pageType={pageType} changePage={changePage} />
 		</div>    
 	);
 }

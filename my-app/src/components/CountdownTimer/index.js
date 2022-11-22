@@ -17,5 +17,22 @@ CountdownTimer({pageType}){
     function updateTime(){
         setTime(String(Number(time) + 1))
     }
-    return <p className="countdown-timer">{time}</p>
+    
+
+    switch (pageType) {
+		case "pro-cons-input":
+			return <p className="countdown-timer">{time}</p>
+		case "pros-cons-comment":
+			return <p className="countdown-timer">{time}</p>
+		case "pros-cons-vote":
+			return <p className="countdown-timer">{time}</p>
+		case "pros-cons-results":
+			return <p className="countdown-timer">{time}</p>
+		case "weighted-vote-input":
+			return <p className="countdown-timer">{time}</p>
+		case "weighted-vote-results":
+			return <p className="countdown-timer">{time}</p>
+		default:
+			break;
+	}
 }
