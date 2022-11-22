@@ -18,9 +18,46 @@ const pageTypes = [
 
 export default function Display() {
 	const [decisionTitle, setDecisionTitle] = useState("");
+	const [voters, setVoters] = useState(0);
+	const [options, setOptions] = useState([]);
+	const [proCon, setProCon] = useState([]);
 
 	function inputDecisionName(event){
 		setDecisionTitle(event.target.value)
+	}
+
+	function inputNumberOfUsers(event){
+		setVoters(event.target.value)
+	}
+
+	function inputOptions(event){
+		if (event.target.name === "input-1"){
+			setOptions([...options, event.target.value]);
+		}
+		if (event.target.name === "input-2"){
+			setOptions([...options, event.target.value]);
+		}
+		if (event.target.name === "input-3"){
+			setOptions([...options, event.target.value]);
+		}
+		if (event.target.name === "input-4"){
+			setOptions([...options, event.target.value]);
+		}
+	}
+
+	function inputProCon(event){
+		if (event.target.name === "pro-con-1"){
+			setProCon([...proCon, event.target.value]);
+		}
+		if (event.target.name === "pro-con-2"){
+			setProCon([...proCon, event.target.value]);
+		}
+		if (event.target.name === "pro-con-3"){
+			setProCon([...proCon, event.target.value]);
+		}
+		if (event.target.name === "pro-con-4"){
+			setProCon([...proCon, event.target.value]);
+		}
 	}
 
 	// Type of page
@@ -28,13 +65,20 @@ export default function Display() {
 
 	function changePage() {
 		setPageType(pageType + 1);
-
 	}
 
 	return (
 		<div>
 			<Header decisionTitle={decisionTitle}/>
-			<Body decisionTitle={decisionTitle} inputDecisionName={inputDecisionName} pageType={pageType} changePage={changePage} />
+			<Body 
+				decisionTitle={decisionTitle} 
+				inputDecisionName={inputDecisionName} inputNumberOfUsers={inputNumberOfUsers} 
+				pageType={pageType} 
+				changePage={changePage} 
+				inputOptions={inputOptions}
+				inputProCon={inputProCon}
+				options={options}
+			/>
 		</div>    
 	);
 }

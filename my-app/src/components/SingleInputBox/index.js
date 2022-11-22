@@ -7,7 +7,7 @@ export default function SingleInputBox ({pageType, inputDecisionName, inputNumbe
 
     switch (pageType) {
 		case "start": 
-            return <input placeholder="" onChange={inputNumberOfUsers}></input>
+            return <input placeholder="Enter the number of voters..." onChange={inputNumberOfUsers}></input>
 		case "decision-input":
 			return <input placeholder="What are you deciding on?" onChange={inputDecisionName}></input>
 		default:
