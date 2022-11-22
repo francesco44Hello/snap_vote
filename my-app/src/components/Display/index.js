@@ -2,6 +2,7 @@ import Header from '../Header/index';
 import Body from '../Body/index';
 import {useState} from 'react';
 
+
 const pageTypes = [
 	"start",
 	"decision-input",
