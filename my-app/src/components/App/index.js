@@ -4,33 +4,16 @@ import './index.css';
 
 function App() {
   return (
-    <>
-  <Display />
-    <div className='mainDiv'>
-    <div className='imgDiv'>
-    <img src='../../../../../TaylorPersona.png' alt='img'></img>
-    </div>
-      
-      <div className='BtnNumbVoters'>
-        <button></button>
-        
-        <div></div>
-        <button></button>
-        
+      <div className="mainDiv">
+          <img className='logo' src="https://i.ibb.co/mHWN0ZB/aa.png" alt="img"></img>
+           <div className='header' >
+            How many voters?
+           </div>
+            <input placeholder='    0'></input>
+            <button className="Btn">Select</button> 
       </div>
-      <div>
-        <h1>how many voters?</h1>
-      </div>
-    </div>
-
-    </>
-  
   );
 }
 
 export default App;
 
-// body{
-//   background-image: url('../../../../spaceBackground.jpeg');
-//   background-size: cover;
-// }
