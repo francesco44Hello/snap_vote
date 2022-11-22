@@ -20,7 +20,7 @@ CountdownTimer({pageType}){
     
 
     switch (pageType) {
-		case "pro-cons-input":
+		case "pros-cons-input":
 			return <p className="countdown-timer">{time}</p>
 		case "pros-cons-comment":
 			return <p className="countdown-timer">{time}</p>

@@ -12,11 +12,16 @@ export default function Body({
   changePage,
   inputOptions,
   inputProCon,
+  handleOptionsClick,
   options
 }) {
   return (
     <div>
-      <SubmitButton pageType={pageType} changePage={changePage} />
+      <SubmitButton 
+        pageType={pageType} 
+        changePage={changePage}
+        handleOptionsClick={handleOptionsClick} 
+      />
       <SingleInputBox
         pageType={pageType}
         inputDecisionName={inputDecisionName}

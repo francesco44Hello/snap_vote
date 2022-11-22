@@ -6,7 +6,7 @@ export default function MultipleChoiceInput({
   changePage,
   inputOptions,
   inputProCon,
-  options,
+  options
 }) {
   switch (pageType) {
     case "options-input":
@@ -35,7 +35,7 @@ export default function MultipleChoiceInput({
           {/* <AddFieldButton pageType={pageType} onClick={makeNewInput} /> */}
         </div>
       );
-    case "pro-cons-input":
+    case "pros-cons-input":
       return (
         <div>
           <input

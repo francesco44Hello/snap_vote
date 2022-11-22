@@ -1,25 +1,19 @@
 import Header from '../Header/index';
 import Body from '../Body/index';
+import { pageTypes } from '../../data/pageTypes';
 import {useState} from 'react';
 
-const pageTypes = [
-	"start",
-	"decision-input",
-	"options-input",
-	"pros-cons-input",
-	"pros-cons-comment",
-	"pros-cons-vote",
-	"pros-cons-results",
-	"weighted-vote-input",
-	"weighted-vote-results",
-	"randomiser",
-	"final-results"
-]
-
 export default function Display() {
+	// Type of page
+	let option1 = "";
+	let option2 = "";
+	let option3 = "";
+	let option4 = "";
+	const [index, setIndex] = useState(0);
+	const [pageType, setPageType] = useState(pageTypes[0]); 
 	const [decisionTitle, setDecisionTitle] = useState("");
 	const [voters, setVoters] = useState(0);
-	const [options, setOptions] = useState([]);
+	const options = [];
 	const [proCon, setProCon] = useState([]);
 
 	function inputDecisionName(event){
@@ -32,17 +26,21 @@ export default function Display() {
 
 	function inputOptions(event){
 		if (event.target.name === "input-1"){
-			setOptions([...options, event.target.value]);
+			option1 = event.target.value;
 		}
 		if (event.target.name === "input-2"){
-			setOptions([...options, event.target.value]);
+			option2 = event.target.value;
 		}
 		if (event.target.name === "input-3"){
-			setOptions([...options, event.target.value]);
+			option3 = event.target.value;
 		}
 		if (event.target.name === "input-4"){
-			setOptions([...options, event.target.value]);
+			option4 = event.target.value;
 		}
+	}
+
+	function handleOptionsClick(){
+		options.push(option1, option2, option3, option4)
 	}
 
 	function inputProCon(event){
@@ -60,16 +58,15 @@ export default function Display() {
 		}
 	}
 
-	// Type of page
-	const [pageType, setPageType] = useState(pageTypes[0]); 
-
 	function changePage() {
-		setPageType(pageType + 1);
+		setPageType(pageTypes[index + 1]);
+		setIndex(index+1)
+		console.log(pageType)
 	}
 
 	return (
 		<div>
-			<Header decisionTitle={decisionTitle}/>
+			<Header decisionTitle={decisionTitle} pageType={pageType}/>
 			<Body 
 				decisionTitle={decisionTitle} 
 				inputDecisionName={inputDecisionName} inputNumberOfUsers={inputNumberOfUsers} 
@@ -77,6 +74,7 @@ export default function Display() {
 				changePage={changePage} 
 				inputOptions={inputOptions}
 				inputProCon={inputProCon}
+				handleOptionsClick={handleOptionsClick}
 				options={options}
 			/>
 		</div>    
