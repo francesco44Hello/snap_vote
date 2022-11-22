@@ -1,4 +1,3 @@
-import '../App';
 import Display from '../Display/index';
 import './index.css';
 
