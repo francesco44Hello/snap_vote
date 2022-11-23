@@ -5,7 +5,7 @@ export default function AllOptionsTable({ pageType, optionsArr, votersArr, proCo
   switch (pageType) {
     case "pros-cons-vote":
       return (
-        <>
+        <div className='AllOptionsTable'>
           {optionsArr.map((option) => (
             <div key={uuidv4()}>
               <h1>{option.option}</h1>
@@ -38,7 +38,7 @@ export default function AllOptionsTable({ pageType, optionsArr, votersArr, proCo
                 })}
             </div>                
             </div>
-            </>);
+            </div>);
     default:
       break;
   }
