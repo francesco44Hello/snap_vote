@@ -18,7 +18,7 @@ export default function Body({
   options
 }) {
   return (
-    <div>
+    <div className='body-component'>
       <SubmitButton 
         pageType={pageType} 
         changePage={changePage}
@@ -39,6 +39,7 @@ export default function Body({
         />
       <AllOptions pageType={pageType} />
       <Results pageType={pageType} />
+      <SubmitButton pageType={pageType} changePage={changePage} />
     </div>
   );
 }

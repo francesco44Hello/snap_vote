@@ -4,7 +4,7 @@ import PageHeader from '../PageHeader/index';
 import UsernameIndicator from '../UsernameIndicator/index';
 
 export default function Header({pageType, decisionTitle}) {
-    return (<div>
+    return (<div className='header'>
         <CountdownTimer pageType={pageType} />
         <PageHeader pageType={pageType} decisionTitle={decisionTitle} />
         <UsernameIndicator pageType={pageType} />

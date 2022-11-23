@@ -89,8 +89,11 @@ export default function Display() {
 	}
 
 	return (
-		<div>
-			<Header decisionTitle={decisionTitle} pageType={pageType}/>
+		<div className='Display'>
+			<Header 
+			decisionTitle={decisionTitle}
+			pageType={pageType}
+			/>
 			<Body 
 				decisionTitle={decisionTitle}
 				pageType={pageType} 
