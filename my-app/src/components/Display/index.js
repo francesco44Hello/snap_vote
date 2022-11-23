@@ -69,7 +69,7 @@ export default function Display() {
 	}
 
 	return (
-		<div>
+		<div className='Display'>
 			<Header 
 			decisionTitle={decisionTitle}
 			pageType={pageType}
