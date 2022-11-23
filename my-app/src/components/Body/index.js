@@ -19,13 +19,6 @@ export default function Body({
 }) {
   return (
     <div className='body-component'>
-      <SubmitButton 
-        pageType={pageType} 
-        changePage={changePage}
-        inputNumberOfUsers={inputNumberOfUsers}
-        handleOptionsClick={handleOptionsClick}
-        handleProConClick={handleProConClick}
-      />
       <SingleInputBox
         pageType={pageType}
         inputDecisionName={inputDecisionName}
@@ -39,7 +32,13 @@ export default function Body({
         />
       <AllOptions pageType={pageType} />
       <Results pageType={pageType} />
-      <SubmitButton pageType={pageType} changePage={changePage} />
+      <SubmitButton 
+        pageType={pageType} 
+        changePage={changePage}
+        inputNumberOfUsers={inputNumberOfUsers}
+        handleOptionsClick={handleOptionsClick}
+        handleProConClick={handleProConClick}
+      />
     </div>
   );
 }

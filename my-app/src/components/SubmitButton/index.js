@@ -19,7 +19,7 @@ export default function SubmitFunction({pageType, changePage, inputNumberOfUsers
 
     switch (pageType) {
       case "start": 
-        return <button onClick={numberOfUsersSubmit}>Submit</button>
+        return <button className='submit' onClick={numberOfUsersSubmit}>Submit</button>
       case "decision-input":
         return <button className='submit' onClick={changePage}>Submit</button>
       case "options-input":

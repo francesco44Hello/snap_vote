@@ -11,7 +11,7 @@ export default function MultipleChoiceInput({
   switch (pageType) {
     case "options-input":
       return (
-        <div>
+        <div className="MultipleChoiceInput">
           <input
             placeholder="Enter an option..."
             name="input-1"
