@@ -13,6 +13,7 @@ export default function Body({
   changePage,
   inputOptions,
   inputProCon,
+  handleProConClick,
   handleOptionsClick,
   options
 }) {
@@ -22,7 +23,8 @@ export default function Body({
         pageType={pageType} 
         changePage={changePage}
         inputNumberOfUsers={inputNumberOfUsers}
-        handleOptionsClick={handleOptionsClick} 
+        handleOptionsClick={handleOptionsClick}
+        handleProConClick={handleProConClick}
       />
       <SingleInputBox
         pageType={pageType}

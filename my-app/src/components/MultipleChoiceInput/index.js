@@ -6,7 +6,7 @@ export default function MultipleChoiceInput({
   changePage,
   inputOptions,
   inputProCon,
-  options
+  optionsArr,
 }) {
   switch (pageType) {
     case "options-input":
@@ -36,31 +36,60 @@ export default function MultipleChoiceInput({
         </div>
       );
     case "pros-cons-input":
-      return (
-        <div>
-          <input
-            placeholder="Enter a pro or con..."
-            name="pro-con-1"
-            onChange={inputProCon}
-          ></input>
-          <input
-            placeholder="Enter a pro or con..."
-            name="pro-con-2"
-            onChange={inputProCon}
-          ></input>
-          <input
-            placeholder="Enter a pro or con..."
-            name="pro-con-3"
-            onChange={inputProCon}
-          ></input>
-          <input
-            placeholder="Enter a pro or con..."
-            name="pro-con-4"
-            onChange={inputProCon}
-          ></input>
-          {/* <AddFieldButton pageType={pageType} onClick={makeNewInput} /> */}
-        </div>
-      );
+      console.log(optionsArr)
+      return <div>TEST</div>
+      // console.log("HI", optionsArr)
+      // return (<div>{optionsArr.map((el) => {
+      //   console.log(el)
+      //   return <div className="pro-con-container">
+      //     <h1>TEST</h1>
+      //     <div className="pro-con">
+      //       <select>
+      //         <option>Pro</option>
+      //         <option>Con</option>
+      //       </select>
+      //       <input
+      //         placeholder="Enter a pro or con..."
+      //         name="pro-con-1"
+      //         onChange={inputProCon}
+      //       ></input>
+      //     </div>
+      //   <div className="pro-con">
+      //       <select>
+      //         <option>Pro</option>
+      //         <option>Con</option>
+      //       </select>
+      //       <input
+      //         placeholder="Enter a pro or con..."
+      //         name="pro-con-1"
+      //         onChange={inputProCon}
+      //       ></input>
+      //     </div>
+      //   <div className="pro-con">
+      //       <select>
+      //         <option>Pro</option>
+      //         <option>Con</option>
+      //       </select>
+      //       <input
+      //         placeholder="Enter a pro or con..."
+      //         name="pro-con-1"
+      //         onChange={inputProCon}
+      //       ></input>
+      //     </div>
+      //   <div className="pro-con">
+      //       <select>
+      //         <option>Pro</option>
+      //         <option>Con</option>
+      //       </select>
+      //       <input
+      //         placeholder="Enter a pro or con..."
+      //         name="pro-con-1"
+      //         onChange={inputProCon}
+      //       ></input>
+      //     </div>
+      //   </div>;
+      // })}</div>
+      // );
     case "pros-cons-comment":
       return <h1>To do if time</h1>;
     case "weighted-vote-input":
@@ -70,3 +99,4 @@ export default function MultipleChoiceInput({
       break;
   }
 }
+          /* <AddFieldButton pageType={pageType} onClick={makeNewInput} /> */

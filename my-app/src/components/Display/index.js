@@ -10,71 +10,80 @@ export default function Display() {
 	const [pageType, setPageType] = useState(pageTypes[index]);
 	const [voters, setVoters] = useState(0);
 	const [votersArr, setVotersArr] = useState([]);
+	const [options, setOptions] = useState([])
+	const [inputArr, setInputArr] = useState([])
+	const [optionsArr, setOptionsArr] = useState([])
+	const [proCon, setProCon] = useState([])
+
+	console.log("optionsArr", optionsArr)
 
 	function numberOfUsers(event){
 		setVoters(Number(event.target.value))
 	}
 
 	function inputNumberOfUsers(){
-		console.log(voters)
 		let newArr = [];
 		for (let i = 0; i < voters; i++){
-			let newVoter = {name: i + 1, vote: "", voted: false}
-			newArr.push(newVoter)
+			newArr = [...newArr, {name: i + 1, vote: "", voted: false}]
 		}
-		setVotersArr([...votersArr, ...newArr]);
-		console.log(votersArr);
-		// console.log(newVoter);
-		// setVotersArr([...votersArr, newVoter])
-		// console.log(votersArr)
+		setVotersArr(newArr);
+		console.log("Number of users", voters)
 	}
-
-	// // Type of page
-	// let option1 = "";
-	// let option2 = "";
-	// let option3 = "";
-	// let option4 = "";
-	// let procon1 = "";
-	// let procon2 = "";
-	// let procon3 = "";
-	// let procon4 = "";
-	// // const [voters, setVoters] = useState(0);
-	// let votersArr = [];
-	// const [votersArray, setVotersArray] = useState([]);
-	// const [optionsArr, setOptionsArr] = useState([])
-	 const options = []
-	// const [option, setOption] = useState("")
-	// const [proCon, setProCon] = useState([]);
 
 	function inputDecisionName(event){
 		setDecisionTitle(event.target.value)
 	}
 
 	function inputOptions(event){
-		
+		console.log("voters array", votersArr)
+		let myObj = {};
+		myObj[event.target.name] = event.target.value;
+		setInputArr([...inputArr, myObj]);
+		const map1 = new Map();
+		inputArr.map(object => map1.set(Object.keys(object)[0], Object.values(object)[0]))
+		const arr = Array.from(map1, (key, value) => {
+		 	return key[1];
+		});
+		setOptions(arr);
 	}
 
 	function handleOptionsClick(){
-		// options.push(option1, option2, option3, option4)
+		let newArr = [];
+		for (let i = 0; i < options.length; i++){
+			newArr = [...newArr, {
+				option: options[i],
+				votes: 0,
+				eliminated: false,
+				options: {
+					pros: [],
+					cons: []
+				}
+			}]
+			setOptionsArr(newArr)
+		}
 	}
 
 	function inputProCon(event){
-		// if (event.target.name === "pro-con-1"){
-		// 	procon1 = event.target.value;
-		// }
-		// if (event.target.name === "pro-con-2"){
-		// 	procon2 = event.target.value;
-		// }
-		// if (event.target.name === "pro-con-3"){
-		// 	procon3 = event.target.value;
-		// }
-		// if (event.target.name === "pro-con-4"){
-		// 	procon4 = event.target.value;
-		// }
-		// setProCon([...procon1, ...procon2, ...procon3, ...procon4])
+		let myObj = {};
+		myObj[event.target.name] = event.target.value
+		setInputArr([])
+		setInputArr([...inputArr, myObj])
+		const map1 = new Map();
+		inputArr.map(object => map1.set(Object.keys(object)[0], Object.values(object)[0]))
+		const arr = Array.from(map1, (key, value) => {
+		 	return key[1];
+		});
+		setProCon(arr)
+	}
+
+	function handleProConClick(){
+		// optionsArr.map(el => {
+		// 	if (el.option)
+		// })
 	}
 
 	function changePage() {
+		console.log("options", optionsArr)
 		setPageType(pageTypes[index + 1]);
 		setIndex(index+1)
 	}
@@ -91,8 +100,9 @@ export default function Display() {
 				inputNumberOfUsers={inputNumberOfUsers} 
 				inputOptions={inputOptions}
 				inputProCon={inputProCon}
+				handleProConClick={handleProConClick}
 				handleOptionsClick={handleOptionsClick}
-				options={options}
+				optionsArr={optionsArr}
 			/>
 		</div>    
 	);
