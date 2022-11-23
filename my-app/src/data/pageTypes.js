@@ -11,3 +11,19 @@ export const pageTypes = [
 	"randomiser",
 	"final-results"
 ]
+
+export const optionsArr = [{
+    option: "This is an option",
+    votes: 0,
+    eliminated: false,
+    options: {
+        pros: ["pro1", "pro2"],
+        cons: ["con1", "con2"]
+    }
+}]
+
+export const votersArr = [{
+    name: "John Smith",
+    vote: "This is the option they voted for",
+    voted: false,     
+}]

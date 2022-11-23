@@ -10,7 +10,8 @@ export default function Display() {
 	let option3 = "";
 	let option4 = "";
 	const [index, setIndex] = useState(0);
-	const [pageType, setPageType] = useState(pageTypes[0]); 
+	// Page to start from 
+	const [pageType, setPageType] = useState(pageTypes[5]); 
 	const [decisionTitle, setDecisionTitle] = useState("");
 	const [voters, setVoters] = useState(0);
 	const options = [];
