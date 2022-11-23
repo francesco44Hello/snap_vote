@@ -31,8 +31,4 @@ export default function PageHeader({decisionTitle, pageType}) {
 		default:
 			return <h1>"DefaultPageHeader"</h1>
 	}
-
-	// function handleChange(event){
-	// 	setHeader(event.target.value);
-	// }
 }
