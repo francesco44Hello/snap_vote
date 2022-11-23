@@ -5,7 +5,8 @@ function App() {
   return (
       <div className="mainDiv">
           <img className='logo' src="https://i.ibb.co/mHWN0ZB/aa.png" alt="img"></img>
-        </div>
+          <Display />
+      </div>
   );
 }
 

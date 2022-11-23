@@ -70,7 +70,10 @@ export default function Display() {
 
 	return (
 		<div>
-			<Header decisionTitle={decisionTitle}/>
+			<Header 
+			decisionTitle={decisionTitle}
+			pageType={pageType}
+			/>
 			<Body 
 				decisionTitle={decisionTitle} 
 				inputDecisionName={inputDecisionName} inputNumberOfUsers={inputNumberOfUsers} 

@@ -15,7 +15,7 @@ export default function Body({
   options
 }) {
   return (
-    <div>
+    <div className='body-component'>
       <SubmitButton pageType={pageType} changePage={changePage} />
       <SingleInputBox
         pageType={pageType}
