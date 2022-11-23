@@ -1,4 +1,5 @@
 import "./index.css";
+import { v4 as uuidv4 } from 'uuid';
 import AddFieldButton from "../AddFieldButton/index";
 
 export default function MultipleChoiceInput({
@@ -37,59 +38,55 @@ export default function MultipleChoiceInput({
       );
     case "pros-cons-input":
       console.log(optionsArr)
-      return <div>TEST</div>
-      // console.log("HI", optionsArr)
-      // return (<div>{optionsArr.map((el) => {
-      //   console.log(el)
-      //   return <div className="pro-con-container">
-      //     <h1>TEST</h1>
-      //     <div className="pro-con">
-      //       <select>
-      //         <option>Pro</option>
-      //         <option>Con</option>
-      //       </select>
-      //       <input
-      //         placeholder="Enter a pro or con..."
-      //         name="pro-con-1"
-      //         onChange={inputProCon}
-      //       ></input>
-      //     </div>
-      //   <div className="pro-con">
-      //       <select>
-      //         <option>Pro</option>
-      //         <option>Con</option>
-      //       </select>
-      //       <input
-      //         placeholder="Enter a pro or con..."
-      //         name="pro-con-1"
-      //         onChange={inputProCon}
-      //       ></input>
-      //     </div>
-      //   <div className="pro-con">
-      //       <select>
-      //         <option>Pro</option>
-      //         <option>Con</option>
-      //       </select>
-      //       <input
-      //         placeholder="Enter a pro or con..."
-      //         name="pro-con-1"
-      //         onChange={inputProCon}
-      //       ></input>
-      //     </div>
-      //   <div className="pro-con">
-      //       <select>
-      //         <option>Pro</option>
-      //         <option>Con</option>
-      //       </select>
-      //       <input
-      //         placeholder="Enter a pro or con..."
-      //         name="pro-con-1"
-      //         onChange={inputProCon}
-      //       ></input>
-      //     </div>
-      //   </div>;
-      // })}</div>
-      // );
+      return <div>{optionsArr.map((el) =>
+        <div key={uuidv4()}>
+        <h1>{el.option}</h1>
+         <div className="pro-con">
+           <select>
+             <option>Pro</option>
+             <option>Con</option>
+           </select>
+           <input
+             placeholder="Enter a pro or con..."
+             name={el.option + 1}
+             onChange={inputProCon}
+           ></input>
+         </div>
+         <div className="pro-con">
+           <select>
+             <option>Pro</option>
+             <option>Con</option>
+           </select>
+           <input
+            placeholder="Enter a pro or con..."
+            name={el.option + 2}
+            onChange={inputProCon}
+           ></input>
+         </div>
+         <div className="pro-con">
+           <select>
+             <option>Pro</option>
+             <option>Con</option>
+           </select>
+           <input
+            placeholder="Enter a pro or con..."
+            name={el.option + 3}
+             onChange={inputProCon}
+           ></input>
+         </div>
+         <div className="pro-con">
+           <select>
+             <option>Pro</option>
+             <option>Con</option>
+           </select>
+           <input
+            placeholder="Enter a pro or con..."
+             name={el.option + 4}
+             onChange={inputProCon}
+           ></input>
+         </div>
+    </div>)}
+    </div>;
     case "pros-cons-comment":
       return <h1>To do if time</h1>;
     case "weighted-vote-input":

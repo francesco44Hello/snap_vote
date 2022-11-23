@@ -1,48 +1,45 @@
-import './index.css';
-import { optionsArr } from '../../data/optionsArr';
+import "./index.css";
+import { v4 as uuidv4 } from 'uuid';
 
-export default function AllOptionsTable({pageType}) {
-    switch (pageType) {
-		case "pros-cons-vote":
-			return (<>
-                <h1>{optionsArr[0].option}</h1>
-                <table className={optionsArr[0].option}>
-                    <tr>
-                        <th>Pros</th> 
-                        <th>Cons</th>
-                    </tr>
-                    <tr>
-                        <td>{optionsArr[0].options.pros[0]}</td>
-                        <td>{optionsArr[0].options.cons[0]}</td>
-                    </tr>
-                    <tr>
-                        <td>{optionsArr[0].options.pros[1]}</td>
-                        <td>{optionsArr[0].options.cons[1]}</td>
-                    </tr>
-                </table>
-                <h1>{optionsArr[1].option}</h1>
-                <table>
-                    <tr>
-                        <th>Pros</th> 
-                        <th>Cons</th>
-                    </tr>
-                    <tr>
-                        <td>{optionsArr[1].options.pros[0]}</td>
-                        <td>{optionsArr[1].options.cons[0]}</td>
-                    </tr>
-                    <tr>
-                        <td>{optionsArr[1].options.pros[1]}</td>
-                        <td>{optionsArr[1].options.cons[1]}</td>
-                    </tr>
-                </table>
-                {/*NEED ONE VOTING SELECT FOR EACH VOTER*/}
-                <h2>Vote:</h2>
-                <select>
-                    <option>{optionsArr[0].option}</option>
-                    <option>{optionsArr[1].option}</option>
-                </select>
-            </>)
-		default:
-			break;
-	}
+export default function AllOptionsTable({ pageType, optionsArr, votersArr, proConVote }) {
+  switch (pageType) {
+    case "pros-cons-vote":
+      return (
+        <>
+          {optionsArr.map((option) => (
+            <div key={uuidv4()}>
+              <h1>{option.option}</h1>
+              <div className={option.option}>
+                <div>
+                  <p>Pros</p>
+                  <p>Cons</p>
+                </div>
+                <div>
+                  <p>{option.options.pros[0]}</p>
+                  <p>{option.options.cons[0]}</p>
+                </div>
+                <div>
+                  <p>{option.options.pros[1]}</p>
+                  <p>{option.options.cons[1]}</p>
+                </div>
+              </div>
+            </div>))}
+            <div>
+            <div>
+                {votersArr.map(el => {
+                    return <div>
+                        <h2>{el.name}</h2>
+                        <select onChange={proConVote} name={el.name}>
+                          <option>Place your vote</option>
+                        {optionsArr.map(option => 
+                            <option>{option.option}</option>)}
+                            </select>
+                    </div>
+                })}
+            </div>                
+            </div>
+            </>);
+    default:
+      break;
+  }
 }

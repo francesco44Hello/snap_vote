@@ -1,18 +1,23 @@
 import './index.css';
 
 export default function Results({pageType}) {
-
-	function randomiser() {
-
+	switch (pageType) {
+		case "final-results":
+			return <h1>TEST</h1>
+		default:
+			return <h1>Test2</h1>
 	}
+	// function randomiser() {
 
-	function weightedVoting() {
+	// }
 
-	}
+	// function weightedVoting() {
 
-	if (pageType === 'intro') {
-		return <div>
+	// }
 
-		</div>
-	}
+	// if (pageType === 'intro') {
+	// 	return <div>
+
+	// 	</div>
+	// }
 }

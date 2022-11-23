@@ -1,6 +1,13 @@
 import './index.css';
 
-export default function SubmitFunction({pageType, changePage, inputNumberOfUsers, handleOptionsClick, handleProConClick}) {
+export default function SubmitFunction({
+	pageType, 
+	changePage, 
+	inputNumberOfUsers, 
+	handleOptionsClick, 
+	handleProConClick, 
+	proConSubmitVote
+}) {
 
 	function optionsSubmit(){
 		handleOptionsClick();
@@ -17,6 +24,11 @@ export default function SubmitFunction({pageType, changePage, inputNumberOfUsers
 		changePage();
 	}
 
+	function proConSubmitVoteFinal(){
+		proConSubmitVote();
+		changePage();
+	}
+
     switch (pageType) {
 		case "start": 
 			return <button onClick={numberOfUsersSubmit}>Submit</button>
@@ -29,7 +41,7 @@ export default function SubmitFunction({pageType, changePage, inputNumberOfUsers
 		case "pros-cons-comment":
 			return <button onClick={changePage}>Submit</button>
 		case "pros-cons-vote":
-			return <button onClick={changePage}>Submit</button>
+			return <button onClick={proConSubmitVoteFinal}>Submit</button>
 		case "pros-cons-results":
 			return <button onClick={changePage}>Submit</button>
 		case "weighted-vote-input":
