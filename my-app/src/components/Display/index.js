@@ -1,84 +1,108 @@
 import Header from '../Header/index';
 import Body from '../Body/index';
-import {useState} from 'react';
-
-
-const pageTypes = [
-	"start",
-	"decision-input",
-	"options-input",
-	"pros-cons-input",
-	"pros-cons-comment",
-	"pros-cons-vote",
-	"pros-cons-results",
-	"weighted-vote-input",
-	"weighted-vote-results",
-	"randomiser",
-	"final-results"
-]
+import { pageTypes } from '../../data/pageTypes';
+import { useState } from 'react';
 
 export default function Display() {
+
 	const [decisionTitle, setDecisionTitle] = useState("");
+	const [index, setIndex] = useState(0);
+	const [pageType, setPageType] = useState(pageTypes[index]);
 	const [voters, setVoters] = useState(0);
-	const [options, setOptions] = useState([]);
-	const [proCon, setProCon] = useState([]);
+	const [votersArr, setVotersArr] = useState([]);
+	const [options, setOptions] = useState([])
+	const [inputArr, setInputArr] = useState([])
+	const [optionsArr, setOptionsArr] = useState([])
+	const [proCon, setProCon] = useState([])
+
+	console.log("optionsArr", optionsArr)
+
+	function numberOfUsers(event){
+		setVoters(Number(event.target.value))
+	}
+
+	function inputNumberOfUsers(){
+		let newArr = [];
+		for (let i = 0; i < voters; i++){
+			newArr = [...newArr, {name: i + 1, vote: "", voted: false}]
+		}
+		setVotersArr(newArr);
+		console.log("Number of users", voters)
+	}
 
 	function inputDecisionName(event){
 		setDecisionTitle(event.target.value)
 	}
 
-	function inputNumberOfUsers(event){
-		setVoters(event.target.value)
+	function inputOptions(event){
+		console.log("voters array", votersArr)
+		let myObj = {};
+		myObj[event.target.name] = event.target.value;
+		setInputArr([...inputArr, myObj]);
+		const map1 = new Map();
+		inputArr.map(object => map1.set(Object.keys(object)[0], Object.values(object)[0]))
+		const arr = Array.from(map1, (key, value) => {
+		 	return key[1];
+		});
+		setOptions(arr);
 	}
 
-	function inputOptions(event){
-		if (event.target.name === "input-1"){
-			setOptions([...options, event.target.value]);
-		}
-		if (event.target.name === "input-2"){
-			setOptions([...options, event.target.value]);
-		}
-		if (event.target.name === "input-3"){
-			setOptions([...options, event.target.value]);
-		}
-		if (event.target.name === "input-4"){
-			setOptions([...options, event.target.value]);
+	function handleOptionsClick(){
+		let newArr = [];
+		for (let i = 0; i < options.length; i++){
+			newArr = [...newArr, {
+				option: options[i],
+				votes: 0,
+				eliminated: false,
+				options: {
+					pros: [],
+					cons: []
+				}
+			}]
+			setOptionsArr(newArr)
 		}
 	}
 
 	function inputProCon(event){
-		if (event.target.name === "pro-con-1"){
-			setProCon([...proCon, event.target.value]);
-		}
-		if (event.target.name === "pro-con-2"){
-			setProCon([...proCon, event.target.value]);
-		}
-		if (event.target.name === "pro-con-3"){
-			setProCon([...proCon, event.target.value]);
-		}
-		if (event.target.name === "pro-con-4"){
-			setProCon([...proCon, event.target.value]);
-		}
+		let myObj = {};
+		myObj[event.target.name] = event.target.value
+		setInputArr([])
+		setInputArr([...inputArr, myObj])
+		const map1 = new Map();
+		inputArr.map(object => map1.set(Object.keys(object)[0], Object.values(object)[0]))
+		const arr = Array.from(map1, (key, value) => {
+		 	return key[1];
+		});
+		setProCon(arr)
 	}
 
-	// Type of page
-	const [pageType, setPageType] = useState(pageTypes[0]); 
+	function handleProConClick(){
+		// optionsArr.map(el => {
+		// 	if (el.option)
+		// })
+	}
 
 	function changePage() {
-		setPageType(pageType + 1);
+		console.log("options", optionsArr)
+		setPageType(pageTypes[index + 1]);
+		setIndex(index+1)
 	}
 
 	return (
 		<div>
-			<Header decisionTitle={decisionTitle}/>
+			<Header decisionTitle={decisionTitle} pageType={pageType}/>
 			<Body 
-				decisionTitle={decisionTitle} 
-				inputDecisionName={inputDecisionName} inputNumberOfUsers={inputNumberOfUsers} 
+				decisionTitle={decisionTitle}
 				pageType={pageType} 
-				changePage={changePage} 
+				changePage={changePage}  
+				inputDecisionName={inputDecisionName}
+				numberOfUsers={numberOfUsers}
+				inputNumberOfUsers={inputNumberOfUsers} 
 				inputOptions={inputOptions}
 				inputProCon={inputProCon}
-				options={options}
+				handleProConClick={handleProConClick}
+				handleOptionsClick={handleOptionsClick}
+				optionsArr={optionsArr}
 			/>
 		</div>    
 	);

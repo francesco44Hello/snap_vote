@@ -8,19 +8,28 @@ import Results from "../Results/index";
 export default function Body({
   pageType,
   inputDecisionName,
+  numberOfUsers,
   inputNumberOfUsers,
   changePage,
   inputOptions,
   inputProCon,
+  handleProConClick,
+  handleOptionsClick,
   options
 }) {
   return (
     <div>
-      <SubmitButton pageType={pageType} changePage={changePage} />
+      <SubmitButton 
+        pageType={pageType} 
+        changePage={changePage}
+        inputNumberOfUsers={inputNumberOfUsers}
+        handleOptionsClick={handleOptionsClick}
+        handleProConClick={handleProConClick}
+      />
       <SingleInputBox
         pageType={pageType}
         inputDecisionName={inputDecisionName}
-        inputNumberOfUsers={inputNumberOfUsers}
+        numberOfUsers={numberOfUsers}
       />
       <MultipleChoiceInput 
         pageType={pageType} 
