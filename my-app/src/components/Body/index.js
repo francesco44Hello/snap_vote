@@ -8,6 +8,7 @@ import Results from "../Results/index";
 export default function Body({
   pageType,
   inputDecisionName,
+  numberOfUsers,
   inputNumberOfUsers,
   changePage,
   inputOptions,
@@ -20,12 +21,13 @@ export default function Body({
       <SubmitButton 
         pageType={pageType} 
         changePage={changePage}
+        inputNumberOfUsers={inputNumberOfUsers}
         handleOptionsClick={handleOptionsClick} 
       />
       <SingleInputBox
         pageType={pageType}
         inputDecisionName={inputDecisionName}
-        inputNumberOfUsers={inputNumberOfUsers}
+        numberOfUsers={numberOfUsers}
       />
       <MultipleChoiceInput 
         pageType={pageType} 
