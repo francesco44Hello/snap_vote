@@ -1,9 +1,12 @@
-import './index.css';
 import Display from '../Display/index';
+import './index.css';
 
 function App() {
   return (
-    <Display />
+      <div className="mainDiv">
+          <img className='logo' src="https://i.ibb.co/mHWN0ZB/aa.png" alt="img"></img>
+          <Display />
+      </div>
   );
 }
 

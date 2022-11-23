@@ -21,7 +21,7 @@ export default function Body({
   proConSubmitVote
 }) {
   return (
-    <div>
+    <div className='body-component'>
       <SubmitButton 
         pageType={pageType} 
         changePage={changePage}
@@ -43,6 +43,13 @@ export default function Body({
         />
       <AllOptions pageType={pageType} optionsArr={optionsArr} votersArr={votersArr} proConVote={proConVote}/>
       <Results pageType={pageType} />
+      <SubmitButton 
+        pageType={pageType} 
+        changePage={changePage}
+        inputNumberOfUsers={inputNumberOfUsers}
+        handleOptionsClick={handleOptionsClick}
+        handleProConClick={handleProConClick}
+      />
     </div>
   );
 }

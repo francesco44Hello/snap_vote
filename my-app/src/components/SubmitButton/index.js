@@ -29,31 +29,30 @@ export default function SubmitFunction({
 		changePage();
 	}
 
-    switch (pageType) {
+  switch (pageType) {
 		case "start": 
-			return <button onClick={numberOfUsersSubmit}>Submit</button>
+			return <button className='submit'onClick={numberOfUsersSubmit}>Submit</button>
 		case "decision-input":
-			return <button onClick={changePage}>Submit</button>
-        case "options-input":
-            return <button onClick={optionsSubmit}>Submit</button>
+			return <button className='submit' onClick={changePage}>Submit</button>
+    case "options-input":
+        return <button className='submit' onClick={optionsSubmit}>Submit</button>
 		case "pros-cons-input":
-			return <button onClick={proConSubmit}>Submit</button>
+			return <button className='submit' onClick={proConSubmit}>Submit</button>
 		case "pros-cons-comment":
-			return <button onClick={changePage}>Submit</button>
+			return <button className='submit' onClick={changePage}>Submit</button>
 		case "pros-cons-vote":
-			return <button onClick={proConSubmitVoteFinal}>Submit</button>
+			return <button className='submit' onClick={proConSubmitVoteFinal}>Submit</button>
 		case "pros-cons-results":
-			return <button onClick={changePage}>Submit</button>
+			return <button className='submit' onClick={changePage}>Submit</button>
 		case "weighted-vote-input":
-			return <button onClick={changePage}>Submit</button>
+			return <button className='submit' onClick={changePage}>Submit</button>
 		case "weighted-vote-results":
-			return <button onClick={changePage}>Submit</button>
+			return <button className='submit' onClick={changePage}>Submit</button>
 		case "randomiser":
-			return <button onClick={changePage}>Submit</button>
+			return <button className='submit' onClick={changePage}>Submit</button>
 		case "final-results":
-			return <button onClick={changePage}>Submit</button>		
+			return <button className='submit' onClick={changePage}>Submit</button>		
         default:
 			break;
 	}
-    
 }
