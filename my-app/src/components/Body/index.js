@@ -15,10 +15,21 @@ export default function Body({
   inputProCon,
   handleProConClick,
   handleOptionsClick,
-  options
+  optionsArr,
+  votersArr,
+  proConVote,
+  proConSubmitVote
 }) {
   return (
     <div className='body-component'>
+      <SubmitButton 
+        pageType={pageType} 
+        changePage={changePage}
+        inputNumberOfUsers={inputNumberOfUsers}
+        handleOptionsClick={handleOptionsClick}
+        handleProConClick={handleProConClick}
+        proConSubmitVote={proConSubmitVote}
+      />
       <SingleInputBox
         pageType={pageType}
         inputDecisionName={inputDecisionName}
@@ -28,9 +39,9 @@ export default function Body({
         pageType={pageType} 
         inputOptions={inputOptions} 
         inputProCon={inputProCon}
-        options={options}
+        optionsArr={optionsArr}
         />
-      <AllOptions pageType={pageType} />
+      <AllOptions pageType={pageType} optionsArr={optionsArr} votersArr={votersArr} proConVote={proConVote}/>
       <Results pageType={pageType} />
       <SubmitButton 
         pageType={pageType} 
