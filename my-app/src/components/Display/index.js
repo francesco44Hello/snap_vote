@@ -10,59 +10,20 @@ export default function Display() {
 	const [pageType, setPageType] = useState(pageTypes[index]);
 	const [voters, setVoters] = useState(0);
 	const [votersArr, setVotersArr] = useState([]);
-	// const [votes, setVotes] = useState([]);
 	const [votesArr, setVotesArr] = useState([])
 	const [options, setOptions] = useState([])
 	const [inputArr, setInputArr] = useState([])
 	const [optionsArr, setOptionsArr] = useState([])
-	const [proCon, setProCon] = useState([])
-	// const [proOrConInput, setProOrConInput] = useState([])
-	// const [proOrConSelect, setProOrConSelect] = useState([])
-	const [winner, setWinner] = useState("")
 
-	// useEffect(() => {
-	//  	console.log("proCon: ", proCon)
-	//  }, [proCon])
-	
-	//  useEffect(() => {
-	// 	console.log("proOrConInput: ", proOrConInput)
-	// }, [proOrConInput])
-
-	// useEffect(() => {
-	// 	console.log("proOrConSelect: ", proOrConSelect)
-	// }, [proOrConSelect])
-
-	// useEffect(() => {
-	// 	console.log("voters: ", voters)
-	// }, [voters])
-
-	// useEffect(() => {
-	// 	console.log("votersArr", votersArr)
-	// }, [votersArr])
-
-	// useEffect(() => {
-	// 	console.log("pageType", pageType)
-	// }, [pageType])
-
-	// useEffect(() => {
-	// 	console.log("inputArr", inputArr)
-	// }, [inputArr])
-
-	// useEffect(() => {
-	// 	console.log("votesArr", votesArr)
-	// }, [votesArr])
-
-	// useEffect(() => {
-	// 	console.log("options", options)
-	// }, [options])
-
-	// useEffect(() => {
-	// 	console.log("optionsArr", optionsArr)
-	// }, [optionsArr])
 
 	function changePage() {
-		setPageType(pageTypes[index + 1]);
-		setIndex(index+1)
+		if (index < 6){
+			setPageType(pageTypes[index + 1]);
+			setIndex(index+1)
+		}
+		else {
+			console.log("End of application")
+		}
 	}
 
 	function numberOfUsers(event){
@@ -112,10 +73,6 @@ export default function Display() {
 			}]
 			setOptionsArr(newArr)
 		}
-	}
-
-	function countVotes(){
-		console.log("countVotes", votesArr)
 	}
 
 	let proOrConInput = []
@@ -234,7 +191,6 @@ export default function Display() {
 				votersArr={votersArr}
 				proConVote={proConVote}
 				proConSubmitVote={proConSubmitVote}
-				countVotes={countVotes}
 				proOrCon={proOrCon}
 			/>
 		</div>    

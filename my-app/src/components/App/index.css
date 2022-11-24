@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 :root {
   --primaryMain: #31986a;
     --primaryDark: rgba(51,51,51,0.4);
@@ -16,89 +18,206 @@ body {
   height: 100%;
   background-image: url('../../../../spaceBackground.jpeg');
   background-size: cover;
+  font-family: 'Roboto';
 }
 
 #root {
   margin: 0;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 1fr [main-column] 2fr 1fr;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .mainDiv {
-  margin: 0;
-  height: 100%;
-  margin-top: 20vh;
-  grid-column: main-column;
-  grid-template-rows: [logo] 200px [pageheader] 50px [body-comp] 1fr;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 1000px;
+  gap: 80px;
+}
+
+.Display {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 450px;
 }
 
 .header-component {
   display: flex;
   flex-direction: column;
+  width: 480px;
+  height: 80px;
   text-align: center;
-  align-items: center;
+  justify-content: center; 
   background-color: var(--primaryAccent);
   border: 3px solid #4569A9;
-  border-radius: 5px;
-  padding: 15px 0px;
+  border-radius: 15px;
   color: var(--secondaryText);
   font-family: 'Roboto';
-  font-size: 14px;
-  width: 27vw;
-  margin: auto; 
-  height: 3vw;
-  text-align: center;
-  text-justify: auto;
-  justify-content: center;
-  
-  
 }
 
 .body-component {
-  grid-row: body-comp;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin: auto;
+  justify-content: center;
+  gap: 60px;
+  height: 800px;
 }
 
 .logo {
   grid-row: logo;
-  width: 50vw;
-  
-  /* width: 30vw; */
+  width: 1000px;
 }
 
+.decision-input {
+  font-size: 25px;
+  border-radius: 5px;
+  border: 1px solid rgb(181, 189, 196);
+  height: 50px;
+  width: 500px;
+}
 
-.submit {
+.pros-cons-input {
+  display: flex;
+  height: 600px;
+  width: 2000px;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.pro-con-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.pro-con {
+  display: flex;
+  gap: 20px;
+}
+
+.pro-con > input {
+  width: 400px;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.custom-select {
+  position: relative;
+}
+
+.custom-select {
+  appearance: none;
+  background-color: #C4C4C4;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 112px;
+  font-size: 35px;
+}
+
+.pro-con-select {
+  appearance: none;
+  background-color: #C4C4C4;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 200px;
+  font-size: 20px;
+}
+
+.pro-con-header {
+  display: flex;
+  flex-direction: column;
+  width: 515px;
+  height: 80px;
+  text-align: center;
+  justify-content: center; 
+  background-color: var(--primaryAccent);
+  border: 3px solid #4569A9;
+  border-radius: 15px;
+  color: var(--secondaryText);
+  font-family: 'Roboto';
+}
+
+.pro-con-vote {
+  display: flex;
+  height: 300px;
+  width: 1000px;
+  justify-content: center;
+  gap: 50px;
+}
+
+.vote-header {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 80px;
+  text-align: center;
+  justify-content: center; 
+  background-color: var(--primaryAccent);
+  border: 3px solid #4569A9;
+  border-radius: 15px;
+  color: var(--secondaryText);
+  font-family: 'Roboto';
+}
+
+.vote-container {
+  display: flex;
+  flex-direction: column;;
+}
+
+.results {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.results-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   align-self: center;
-  margin-top: 30px;
-  outline: 0;
+}
+
+p {
+  color: white;
+  font-size: 20px;
+}
+
+h1 {
+  color: white;
+}
+
+h2 {
+  color: white;
+}
+
+.submit {
+  font-size: 30px; 
   cursor: pointer;
-  padding: 15px 5px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 20px;
-  vertical-align: middle;
-  border: 1px solid;
-  border-radius: 6px;
   color: var(--secondaryText);
   background-color: var(--primaryMain);
+  border: 1px solid;
+  border-radius: 15px;
   border-color: #1b1f2326;
   box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset;
   transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
   transition-property: color, background-color, border-color;
-  width: 20vw;
-  height: 4vw;
-  font-family: 'Roboto';
-  font-size: 22px;
-
+  width: 200px;
+  height: 80px;
+  font-weight: 500;
 }
 
 .Btn:hover {
@@ -107,40 +226,28 @@ body {
     transition-duration: 0.1s;
 }
 
-.MultipleChoiceInput {
+/*The container around them*/
+.options-input-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-self: center;
+  justify-content: space-between;
+  height: 330px;
+}
+
+/*Each individual input field*/
+.options-input {
+  width: 700px;
+  height: 50px;
+  font-size: 25px;
+  border-radius: 10px;
 }
 
 .AllOptionsTable {
   color: var(--secondaryText)
 }
 
-.pros-cons-input1 {
-  color: var(--secondaryText)
-}
-
 h1 {
-  color: var(--secondaryText)
-}
-
-input {
-  border-radius: 5px;
-  background: rgb(249, 250, 250);
-  border: 1px solid rgb(181, 189, 196);
-  border-radius: 1px;
-  font-size: 16px;
-  height: 50px;
-  line-height: 24px;
-  padding: 7px 8px;
-  color: rgb(8, 9, 10);
-  box-shadow: none;
-  width: 26vw;
-  text-size-adjust: 24px;
-  margin-top: 30px;
+  color: var(--secondaryText);
 }
 
 .header:focus {
@@ -153,13 +260,6 @@ input {
 .darkBlueSpan {
   position: relative;
   justify-content:center ;
-}
-
-input {
-  font-size: 50px;
-  height: 200px;
-  width: 1000px;
- 
 }
 
 .start-input {

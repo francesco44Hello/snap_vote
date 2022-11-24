@@ -13,23 +13,27 @@ export default function MultipleChoiceInput({
   switch (pageType) {
     case "options-input":
       return (
-        <div className="MultipleChoiceInput">
+        <div className="options-input-container">
           <input
+            className="options-input"
             placeholder="Enter an option..."
             name="input-1"
             onChange={inputOptions}
           ></input>
           <input
+            className="options-input"
             placeholder="Enter an option..."
             name="input-2"
             onChange={inputOptions}
           ></input>
           <input
+            className="options-input"
             placeholder="Enter an option..."
             name="input-3"
             onChange={inputOptions}
           ></input>
           <input
+            className="options-input"
             placeholder="Enter an option..."
             name="input-4"
             onChange={inputOptions}
@@ -39,15 +43,16 @@ export default function MultipleChoiceInput({
       );
     case "pros-cons-input":
       console.log(optionsArr)
-      return <div className='pros-cons-input1'>{optionsArr.map((el) =>
-        <div key={uuidv4()}>
-        <h1>{el.option}</h1>
+      return <div className="pros-cons-input">{optionsArr.map((el) =>
+        <div key={uuidv4()} className="pro-con-container">
+        <div className="pro-con-header"><h1>{el.option}</h1></div>
          <div className="pro-con">
            <select 
+            className="custom-select"
             onChange={proOrCon}
             name={el.option + 1}
            >
-             <option>Pro or con?</option>
+             <option></option>
              <option>Pro</option>
              <option>Con</option>
            </select>
@@ -59,10 +64,11 @@ export default function MultipleChoiceInput({
          </div>
          <div className="pro-con">
          <select 
+            className="custom-select"
             onChange={proOrCon}
             name={el.option + 2}
            >
-             <option>Pro or con?</option>
+             <option></option>
              <option>Pro</option>
              <option>Con</option>
            </select>
@@ -73,11 +79,12 @@ export default function MultipleChoiceInput({
            ></input>
          </div>
          <div className="pro-con">
-         <select 
+         <select
+            className="custom-select"
             onChange={proOrCon}
             name={el.option + 3}
            >
-             <option>Pro or con?</option>
+             <option></option>
              <option>Pro</option>
              <option>Con</option>
            </select>
@@ -88,11 +95,12 @@ export default function MultipleChoiceInput({
            ></input>
          </div>
          <div className="pro-con">
-         <select 
+         <select
+            className="custom-select"
             onChange={proOrCon}
             name={el.option + 4}
            >
-             <option>Pro or con?</option>
+             <option></option>
              <option>Pro</option>
              <option>Con</option>
            </select>
