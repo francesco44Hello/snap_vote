@@ -148,3 +148,7 @@ input {
   position: relative;
   justify-content:center ;
 }
+
+p {
+  color: white;
+}

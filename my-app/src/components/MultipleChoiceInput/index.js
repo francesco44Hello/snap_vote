@@ -8,6 +8,7 @@ export default function MultipleChoiceInput({
   inputOptions,
   inputProCon,
   optionsArr,
+  proOrCon
 }) {
   switch (pageType) {
     case "options-input":
@@ -42,7 +43,11 @@ export default function MultipleChoiceInput({
         <div key={uuidv4()}>
         <h1>{el.option}</h1>
          <div className="pro-con">
-           <select>
+           <select 
+            onChange={proOrCon}
+            name={el.option + 1}
+           >
+             <option>Pro or con?</option>
              <option>Pro</option>
              <option>Con</option>
            </select>
@@ -53,7 +58,11 @@ export default function MultipleChoiceInput({
            ></input>
          </div>
          <div className="pro-con">
-           <select>
+         <select 
+            onChange={proOrCon}
+            name={el.option + 2}
+           >
+             <option>Pro or con?</option>
              <option>Pro</option>
              <option>Con</option>
            </select>
@@ -64,7 +73,11 @@ export default function MultipleChoiceInput({
            ></input>
          </div>
          <div className="pro-con">
-           <select>
+         <select 
+            onChange={proOrCon}
+            name={el.option + 3}
+           >
+             <option>Pro or con?</option>
              <option>Pro</option>
              <option>Con</option>
            </select>
@@ -75,7 +88,11 @@ export default function MultipleChoiceInput({
            ></input>
          </div>
          <div className="pro-con">
-           <select>
+         <select 
+            onChange={proOrCon}
+            name={el.option + 4}
+           >
+             <option>Pro or con?</option>
              <option>Pro</option>
              <option>Con</option>
            </select>
