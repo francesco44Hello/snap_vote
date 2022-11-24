@@ -214,7 +214,7 @@ export default function Display() {
 	}
 
 	return (
-		<div className='Display'>
+		<div className='Display' data-testid='Display-components'>
 			<Header 
 			decisionTitle={decisionTitle}
 			pageType={pageType}

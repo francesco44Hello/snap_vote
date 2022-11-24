@@ -23,7 +23,7 @@ export default function Body({
   proOrCon
 }) {
   return (
-    <div className='body-component'>
+    <div className='body-component' data-testid='body-component' >
     
       <SingleInputBox
         pageType={pageType}

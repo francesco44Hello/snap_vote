@@ -33,11 +33,11 @@ export default function SubmitFunction({
 
   switch (pageType) {
 		case "start": 
-			return <button className='submit'onClick={numberOfUsersSubmit}>Submit</button>
+			return <button className='submit' data-testid='start' onClick={numberOfUsersSubmit}>Submit</button>
 		case "decision-input":
-			return <button className='submit' onClick={changePage}>Submit</button>
-    case "options-input":
-        return <button className='submit' onClick={optionsSubmit}>Submit</button>
+			return <button className='submit' data-testid='decision-input' onClick={changePage}>Submit</button>
+		case "options-input":
+			return <button className='submit' data-testid='options-input' onClick={optionsSubmit}>Submit</button>
 		case "pros-cons-input":
 			return <button className='submit' onClick={proConSubmit}>Submit</button>
 		case "pros-cons-comment":

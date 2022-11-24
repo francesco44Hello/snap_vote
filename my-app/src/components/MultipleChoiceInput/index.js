@@ -13,7 +13,7 @@ export default function MultipleChoiceInput({
   switch (pageType) {
     case "options-input":
       return (
-        <div className="MultipleChoiceInput">
+        <div className="MultipleChoiceInput" data-testid="MultipleChoiceInput">
           <input
             placeholder="Enter an option..."
             name="input-1"
@@ -39,7 +39,7 @@ export default function MultipleChoiceInput({
       );
     case "pros-cons-input":
       console.log(optionsArr)
-      return <div className='pros-cons-input1'>{optionsArr.map((el) =>
+      return <div className='pros-cons-input1' data-testid='pros-cons-input1' >{optionsArr.map((el) =>
         <div key={uuidv4()}>
         <h1>{el.option}</h1>
          <div className="pro-con">
