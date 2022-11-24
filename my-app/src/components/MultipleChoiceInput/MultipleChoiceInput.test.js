@@ -16,7 +16,13 @@ describe("MultipleChoiceInput renders on the correct pages", () => {;
     const actual = screen.getByTestId('MultipleChoiceInput')
     expect(actual).toBeInTheDocument();
     expect(actual).toHaveClass('MultipleChoiceInput')
+    // const spy = jest.spyOn(Component, "default");
+    // expect(spy).toHaveBeenCalled();
+
   });
+  
+//   const spy = jest.spyOn(foobar, "default");
+// expect(spy).toHaveBeenCalled();
 
   test(`MultipleChoiceInput renders on the ${pageTypes[3]}`, () => {
     render(<Component pageType={pageTypes[3]} inputProCon={props.onChange} name={props.name} optionsArr={props.optionsArr} />);

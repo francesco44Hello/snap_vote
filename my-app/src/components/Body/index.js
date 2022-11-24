@@ -21,7 +21,7 @@ export default function Body({
   proConSubmitVote
 }) {
   return (
-    <div className='body-component'>
+    <div className='body-component' data-testid='body-component' >
     
       <SingleInputBox
         pageType={pageType}
