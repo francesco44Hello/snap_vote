@@ -1,8 +1,19 @@
-import { render, screen } from '@testing-library/react';
-import Component from './index';
+import { render, screen } from "@testing-library/react";
+import { test, expect, describe } from "@jest/globals";
+import Component from "./index";
+import { pageTypes } from "../../data/pageTypes";
 
-test('renders learn react link', () => {
-  render(<Component />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe("submit button renders on all pages", () => {
+  let currentPage = "";
+  beforeEach(() => {
+    for (let page of pageTypes) {
+      currentPage = page;
+      //console.log(currentPage);
+    }
+  });
+  test(`Submit button renders on the ${currentPage}`, () => {
+    render(<Component pageType={currentPage} />);
+    const button = screen.getByRole("button");
+    expect(button).toBeInTheDocument();
+  });
 });

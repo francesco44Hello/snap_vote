@@ -11,11 +11,11 @@ test('renders learn react link', () => {
   
   render(<Header />);
   
-  screen.debug();
+ 
 });
 /*
-Test that the header components rendes subcomponents 
-
+render header 
+parse a component for page type 
 
 
 
