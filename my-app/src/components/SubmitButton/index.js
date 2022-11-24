@@ -6,7 +6,8 @@ export default function SubmitFunction({
 	inputNumberOfUsers, 
 	handleOptionsClick, 
 	handleProConClick, 
-	proConSubmitVote
+	proConSubmitVote,
+	countVotes
 }) {
 
 	function optionsSubmit(){
@@ -26,6 +27,7 @@ export default function SubmitFunction({
 
 	function proConSubmitVoteFinal(){
 		proConSubmitVote();
+		countVotes();
 		changePage();
 	}
 
