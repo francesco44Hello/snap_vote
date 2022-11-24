@@ -47,6 +47,12 @@ body {
   font-size: 14px;
   width: 27vw;
   margin: auto; 
+  height: 3vw;
+  text-align: center;
+  text-justify: auto;
+  justify-content: center;
+  
+  
 }
 
 .body-component {
@@ -61,7 +67,7 @@ body {
 .logo {
   grid-row: logo;
   width: 50vw;
-  height: 15vw;
+  
   /* width: 30vw; */
 }
 
@@ -132,7 +138,7 @@ input {
   padding: 7px 8px;
   color: rgb(8, 9, 10);
   box-shadow: none;
-  width: 30vw;
+  width: 26vw;
   text-size-adjust: 24px;
   margin-top: 30px;
 }
