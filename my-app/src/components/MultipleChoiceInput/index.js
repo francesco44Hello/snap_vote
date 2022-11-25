@@ -42,7 +42,7 @@ export default function MultipleChoiceInput({
         </div>
       );
     case "pros-cons-input":
-      console.log(optionsArr)
+
       return <div className="pros-cons-input">{optionsArr.map((el) =>
         <div key={uuidv4()} className="pro-con-container">
         <div className="pro-con-header"><h1>{el.option}</h1></div>
