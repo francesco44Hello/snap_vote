@@ -10,10 +10,10 @@ export default function AllOptionsTable({
   switch (pageType) {
     case "pros-cons-vote":
       return (
-        <div className="AllOptionsTable">
+        <div className="pro-con-vote">
           {optionsArr.map((option) => (
             <div key={uuidv4()}>
-              <h1>{option.option}</h1>
+              <div className="vote-header"><h1>{option.option}</h1></div>
               <div className={option.option}>
                 <div>
                   <h2>Pros</h2>
@@ -25,12 +25,15 @@ export default function AllOptionsTable({
             </div>
           ))}
           <div>
-            <div>
+            <div className="vote-container">
               {votersArr.map((el) => {
                 return (
                   <div key={uuidv4()}>
                     <h2>{"User" + el.name}</h2>
-                    <select onChange={proConVote} name={el.name}>
+                    <select 
+                      onChange={proConVote} 
+                      name={el.name}
+                      className="pro-con-select">
                       <option>Place your vote</option>
                       {optionsArr.map((option) => (
                         <option key={uuidv4()}>{option.option}</option>

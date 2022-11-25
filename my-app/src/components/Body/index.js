@@ -19,7 +19,6 @@ export default function Body({
   votersArr,
   proConVote,
   proConSubmitVote,
-  countVotes,
   proOrCon
 }) {
   return (
@@ -54,7 +53,6 @@ export default function Body({
         handleOptionsClick={handleOptionsClick}
         handleProConClick={handleProConClick}
         proConSubmitVote={proConSubmitVote}
-        countVotes={countVotes}
       />
     </div>
   );

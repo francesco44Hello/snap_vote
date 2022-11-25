@@ -1,13 +1,10 @@
-import './index.css';
-
 export default function SubmitFunction({
 	pageType, 
 	changePage, 
 	inputNumberOfUsers, 
 	handleOptionsClick, 
 	handleProConClick, 
-	proConSubmitVote,
-	countVotes
+	proConSubmitVote
 }) {
 
 	function optionsSubmit(){
@@ -27,7 +24,6 @@ export default function SubmitFunction({
 
 	function proConSubmitVoteFinal(){
 		proConSubmitVote();
-		countVotes();
 		changePage();
 	}
 
@@ -45,7 +41,7 @@ export default function SubmitFunction({
 		case "pros-cons-vote":
 			return <button className='submit' onClick={proConSubmitVoteFinal}>Submit</button>
 		case "pros-cons-results":
-			return <button className='submit' onClick={changePage}>Submit</button>
+			break;
 		case "weighted-vote-input":
 			return <button className='submit' onClick={changePage}>Submit</button>
 		case "weighted-vote-results":

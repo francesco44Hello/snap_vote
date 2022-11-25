@@ -13,11 +13,11 @@ export default function PageHeader({decisionTitle, pageType}) {
 			// return <input defaultValue={header} onChange={handleChange}></input>
 			return <h1>{decisionTitle}</h1>
 		case "pros-cons-input":
-			return <h1>Pros/Cons</h1>
+			return <h1 className="pros-cons-h1">Write down the pros and cons</h1>
 		case "pros-cons-comment":
-			return <h1>Comment on any pros/cons</h1>
+			return <h1>Comment on any pros or cons</h1>
 		case "pros-cons-vote":
-			return <h1>Vote on options</h1>
+			return <h1>Time to vote!</h1>
 		case "pros-cons-results":
 			return <h1>Results</h1>
 		case "weighted-vote-input":
@@ -29,6 +29,6 @@ export default function PageHeader({decisionTitle, pageType}) {
 		case "final-results":
 			return <h1>Final results</h1>
 		default:
-			return <h1>"DefaultPageHeader"</h1>
+			return <h1>""</h1>
 	}
 }
