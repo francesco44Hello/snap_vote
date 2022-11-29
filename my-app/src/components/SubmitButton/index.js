@@ -1,3 +1,9 @@
+
+/**
+ * This is a test function blah 
+ * @param {*} param2 comment text sample
+ * @returns 
+ */
 export default function SubmitFunction({
 	pageType, 
 	changePage, 

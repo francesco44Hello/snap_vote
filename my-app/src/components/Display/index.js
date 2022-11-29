@@ -28,6 +28,7 @@ export default function Display() {
 	// }, [optionsArr])
 
 	function changePage() {
+		// Ensures the pageType doesn't go higher than our amount of finished pages
 		if (index < 6){
 			setPageType(pageTypes[index + 1]);
 			setIndex(index+1)
