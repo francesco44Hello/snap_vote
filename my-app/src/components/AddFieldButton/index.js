@@ -1,5 +1,10 @@
 import './index.css';
 
+/**
+ * 
+ * @param {*} param0 
+ * @returns 
+ */
 export default function AddFieldButton({pageType}) {
 
 	switch (pageType) {

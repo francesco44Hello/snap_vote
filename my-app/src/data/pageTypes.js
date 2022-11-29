@@ -6,8 +6,8 @@ export const pageTypes = [
 	"pros-cons-comment",
 	"pros-cons-vote",
 	"pros-cons-results",
-	// "weighted-vote-input",
-	// "weighted-vote-results",
-	// "randomiser",
-	// "final-results"
+	"weighted-vote-input",
+	"weighted-vote-results",
+	"randomiser",
+	"final-results"
 ]
