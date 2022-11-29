@@ -7,27 +7,21 @@
 export default function SubmitFunction({
 	pageType, 
 	changePage, 
-	inputNumberOfUsers, 
-	handleOptionsClick, 
 	handleProConClick, 
 	proConSubmitVote
 }) {
 
-	function optionsSubmit(){
-		handleOptionsClick();
-		changePage();
-	}
-
-	function numberOfUsersSubmit(){
-		inputNumberOfUsers();
-		changePage();
-	}
-
+	/** 
+	 * Calls handleProConClick before changing the page
+	 */
 	function proConSubmit(){
 		handleProConClick();
 		changePage();
 	}
 
+	/** 
+	 * Calls proConSubmitVote before changing the page
+	 */
 	function proConSubmitVoteFinal(){
 		proConSubmitVote();
 		changePage();
@@ -35,11 +29,11 @@ export default function SubmitFunction({
 
   switch (pageType) {
 		case "start": 
-			return <button className='submit' data-testid='start' onClick={numberOfUsersSubmit}>Submit</button>
+			return <button className='submit' data-testid='start' onClick={changePage}>Submit</button>
 		case "decision-input":
 			return <button className='submit' data-testid='decision-input' onClick={changePage}>Submit</button>
 		case "options-input":
-			return <button className='submit' data-testid='options-input' onClick={optionsSubmit}>Submit</button>
+			return <button className='submit' data-testid='options-input' onClick={changePage}>Submit</button>
 		case "pros-cons-input":
 			return <button className='submit' onClick={proConSubmit}>Submit</button>
 		case "pros-cons-comment":

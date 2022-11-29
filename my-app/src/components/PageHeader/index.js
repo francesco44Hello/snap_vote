@@ -1,8 +1,4 @@
-import './index.css';
-import {useState} from "react";
-
 export default function PageHeader({decisionTitle, pageType}) {
-	/*const [header, setHeader] = useState(decisionTitle)*/
 
 	switch (pageType) {
 		case "start": 
@@ -10,7 +6,6 @@ export default function PageHeader({decisionTitle, pageType}) {
 		case "decision-input":
 			return <h1>What are you voting on?</h1>
 		case "options-input":
-			// return <input defaultValue={header} onChange={handleChange}></input>
 			return <h1>{decisionTitle}</h1>
 		case "pros-cons-input":
 			return <h1 className="pros-cons-h1">Write down the pros and cons</h1>

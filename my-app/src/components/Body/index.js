@@ -2,24 +2,22 @@ import "./index.css";
 import SubmitButton from "../SubmitButton/index";
 import SingleInputBox from "../SingleInputBox/index";
 import MultipleChoiceInput from "../MultipleChoiceInput/index";
-import AllOptions from "../AllOptions/index";
+import AllOptionsTable from "../AllOptionsTable/index"
 import Results from "../Results/index";
 
 export default function Body({
   pageType,
   inputDecisionName,
   numberOfUsers,
-  inputNumberOfUsers,
   changePage,
   inputOptions,
   inputProCon,
   handleProConClick,
-  handleOptionsClick,
   optionsArr,
   votersArr,
   proConVote,
   proConSubmitVote,
-  proOrCon
+  selectProCon
 }) {
   return (
     <div className='body-component' data-testid='body-component' >
@@ -34,9 +32,9 @@ export default function Body({
         inputOptions={inputOptions} 
         inputProCon={inputProCon}
         optionsArr={optionsArr}
-        proOrCon={proOrCon}
+        selectProCon={selectProCon}
       />
-      <AllOptions 
+      <AllOptionsTable
         pageType={pageType} 
         optionsArr={optionsArr} 
         votersArr={votersArr} 
@@ -49,8 +47,6 @@ export default function Body({
       <SubmitButton 
         pageType={pageType} 
         changePage={changePage}
-        inputNumberOfUsers={inputNumberOfUsers}
-        handleOptionsClick={handleOptionsClick}
         handleProConClick={handleProConClick}
         proConSubmitVote={proConSubmitVote}
       />

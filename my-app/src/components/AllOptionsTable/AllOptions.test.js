@@ -1,8 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { test, expect, describe } from "@jest/globals";
-import Component from "./index";
+import Component from "../AllOptionsTable/index";
 import { pageTypes } from "../../data/pageTypes";
-import AllOptionsTable from '../AllOptionsTable/index';
 
 describe("AllOptions renders on correct pages", () => {
   let currentPage = "";

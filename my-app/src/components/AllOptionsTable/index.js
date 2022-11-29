@@ -1,4 +1,3 @@
-import "./index.css";
 import { v4 as uuidv4 } from "uuid";
 
 export default function AllOptionsTable({
@@ -9,17 +8,16 @@ export default function AllOptionsTable({
 }) {
   switch (pageType) {
     case "pros-cons-vote":
-      return (
-        <div className="pro-con-vote">
+      return <div className="pro-con-vote" data-testid='AllOptions'>
           {optionsArr.map((option) => (
             <div key={uuidv4()}>
               <div className="vote-header"><h1>{option.option}</h1></div>
               <div className={option.option}>
                 <div>
                   <h2>Pros</h2>
-                  {option.options.pros.map(pro => <p key={uuidv4()}>{pro}</p>)}
+                  {option.prosCons.pros.map(pro => <p key={uuidv4()}>{pro}</p>)}
                   <h2>Cons</h2>
-                  {option.options.cons.map(con => <p key={uuidv4()}>{con}</p>)}
+                  {option.prosCons.cons.map(con => <p key={uuidv4()}>{con}</p>)}
                 </div>
               </div>
             </div>
@@ -45,8 +43,7 @@ export default function AllOptionsTable({
             </div>
           </div>
         </div>
-      );
     default:
       break;
   }
-}
+}        
