@@ -23,27 +23,27 @@
   
   #root {
     margin: 0;
-   
+    width: 100vw;
     height: 100vh;
     display: flex;
     align-content: center;
     justify-items: center;
     align-items: center;
     justify-content: center;
-    
-      width: 96%;
-      max-width: 1200px;
-      margin: 0 auto;
+    width: 96%; 
+    max-width: 1200px;
+    margin: 0 auto;
   }
-  
   
   .mainDiv {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: 1000px;
-    gap: 80px;
+    width: 100vw;
+    height: 100vh;
+    gap: 4.3vh;
+    border: 1px solid purple;
   }
   
   .Display {
@@ -51,14 +51,15 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 450px;
+    height: 70vh;
   }
   
   .header-component {
     display: flex;
     flex-direction: column;
-    width: 480px;
-    height: 80px;
+    width: max(30vw, 250px);
+    height: 8vh;
+    max-height: 100px;
     text-align: center;
     justify-content: center; 
     background-color: var(--primaryAccent);
@@ -67,19 +68,24 @@
     color: var(--secondaryText);
     font-family: 'Roboto';
   }
+  .header-component > h1 {
+    font-size: min(4vw, 25px)
+  }
   
   .body-component {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 60px;
-    height: 800px;
+    gap: 12vh;
+    height: 60vh;
+    width: 30vw;
   }
   
   .logo {
     grid-row: logo;
-    width: 1000px;
+    max-width: 850px;
+    width: 90vw;
   }
   
   .decision-input {
@@ -93,17 +99,25 @@
   .pros-cons-input {
     display: flex;
     height: 600px;
-    width: 2000px;
+    width: 100vw;
     align-items: center;
     justify-content: center;
     gap: 50px;
+    border: 1px solid cyan;
   }
   
+  @media only screen and (min-width: 1000px) {
+    .pros-cons-input {
+      flex-wrap: wrap;
+    }
+  }
+
   .pro-con-container {
     display: flex;
     flex-direction: column;
     gap: 40px;
     align-items: center;
+    border: 1px solid blue;
   }
   
   .pro-con {
@@ -112,8 +126,8 @@
   }
   
   .pro-con > input {
-    width: 400px;
-    height: 50px;
+    width: min(40vw, 250px);
+    height: min(10vh, 40px);
     border-radius: 10px;
     font-size: 20px;
   }
@@ -127,8 +141,8 @@
     background-color: #C4C4C4;
     padding: 0 1em 0 0;
     margin: 0;
-    width: 112px;
-    font-size: 35px;
+    width: min(4.5vw, 90px);
+    font-size: min(3vw, 30px);
   }
   
   .pro-con-select {
@@ -143,8 +157,9 @@
   .pro-con-header {
     display: flex;
     flex-direction: column;
-    width: 515px;
-    height: 80px;
+    width: min(40vw, 300px);
+    font-size: min(3.5vw, 20px);
+    height: 10vh;
     text-align: center;
     justify-content: center; 
     background-color: var(--primaryAccent);
@@ -178,7 +193,7 @@
   
   .vote-container {
     display: flex;
-    flex-direction: column;;
+    flex-direction: column;
   }
   
   .results {
@@ -211,7 +226,7 @@
   }
   
   .submit {
-    font-size: 30px; 
+    font-size: min(3.5vw, 30px); 
     cursor: pointer;
     color: var(--secondaryText);
     background-color: var(--primaryMain);
@@ -221,8 +236,8 @@
     box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset;
     transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
     transition-property: color, background-color, border-color;
-    width: 200px;
-    height: 80px;
+    width: max(15vw, 100px);
+    height: max(7vh, 40px);
     font-weight: 500;
   }
   
@@ -269,9 +284,9 @@
   }
   
   .start-input {
-    font-size: 50px;
-    height: 100px;
-    width: 100px;
+    font-size: 30px;
+    height: 80px;
+    width: 80px;
     text-align: center;
     box-shadow: inset 0px 8px 8px
     rgba(0, 0, 0, 0.25);
