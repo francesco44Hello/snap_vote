@@ -43,7 +43,6 @@
     width: 100vw;
     height: 100vh;
     gap: 4.3vh;
-    border: 1px solid purple;
   }
   
   .Display {
@@ -103,7 +102,6 @@
     align-items: center;
     justify-content: center;
     gap: 50px;
-    border: 1px solid cyan;
   }
   
   @media only screen and (min-width: 1000px) {
@@ -117,7 +115,6 @@
     flex-direction: column;
     gap: 40px;
     align-items: center;
-    border: 1px solid blue;
   }
   
   .pro-con {
