@@ -41,12 +41,14 @@ export default function MultipleChoiceInput({
       );
     case "pros-cons-input":
       return <div className='pros-cons-input pros-cons-input1' data-testid='pros-cons-input1' >{optionsArr.map((el) => <div key={uuidv4()} className="pro-con-container">
-        <div className="pro-con-header"><h1>{el.option}</h1></div>
+        <><h1>{el.option}</h1></>
          <div className="pro-con">
            <select 
             className="custom-select"
             onChange={selectProCon}
             name={el.option + 1}
+            placeholder="pro"
+            text='pro'
            >
              <option></option>
              <option>Pro</option>
@@ -63,8 +65,9 @@ export default function MultipleChoiceInput({
             className="custom-select"
             onChange={selectProCon}
             name={el.option + 2}
+            placeholder="pro"
            >
-             <option></option>
+             <option>Pro</option>
              <option>Pro</option>
              <option>Con</option>
            </select>
@@ -72,6 +75,7 @@ export default function MultipleChoiceInput({
             placeholder="Enter a pro or con..."
             name={el.option + 2}
             onChange={inputProCon}
+            
            ></input>
          </div>
          <div className="pro-con">
@@ -79,6 +83,7 @@ export default function MultipleChoiceInput({
             className="custom-select"
             onChange={selectProCon}
             name={el.option + 3}
+            placeholder="pro"
            >
              <option></option>
              <option>Pro</option>
@@ -95,6 +100,7 @@ export default function MultipleChoiceInput({
             className="custom-select"
             onChange={selectProCon}
             name={el.option + 4}
+            placeholder="pro"
            >
              <option></option>
              <option>Pro</option>

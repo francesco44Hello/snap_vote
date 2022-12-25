@@ -20,7 +20,7 @@ export default function Body({
   selectProCon
 }) {
   return (
-    <div className='body-component' data-testid='body-component' >
+    <>
     
       <SingleInputBox
         pageType={pageType}
@@ -50,6 +50,6 @@ export default function Body({
         handleProConClick={handleProConClick}
         proConSubmitVote={proConSubmitVote}
       />
-    </div>
+    </>
   );
 }

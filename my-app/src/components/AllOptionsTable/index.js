@@ -10,15 +10,15 @@ export default function AllOptionsTable({
     case "pros-cons-vote":
       return <div className="pro-con-vote" data-testid='AllOptions'>
           {optionsArr.map((option) => (
-            <div key={uuidv4()}>
+            <div className="pro-con-list" key={uuidv4()}>
               <div className="vote-header"><h1>{option.option}</h1></div>
-              <div className={option.option}>
-                <div>
+              <div className='options-container'>
+                <>
                   <h2>Pros</h2>
                   {option.prosCons.pros.map(pro => <p key={uuidv4()}>{pro}</p>)}
                   <h2>Cons</h2>
                   {option.prosCons.cons.map(con => <p key={uuidv4()}>{con}</p>)}
-                </div>
+                </>
               </div>
             </div>
           ))}
