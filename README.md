@@ -20,14 +20,6 @@ $ npm i
  ```
 App will be accessible at `http://localhost:3000`
 
-### Build your App:
-
-```sh
-$ npm run build:prod (OR $yarn run build:prod)
-```
-* Open /build/index.html in your browser and, if everything works as intended,
-* Upload contents of BUILD folder to your hosting provider.
-
 ### Support:
 
 * Star the repo
