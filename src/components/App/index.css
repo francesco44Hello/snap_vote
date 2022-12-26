@@ -298,20 +298,24 @@ h2 {
 .results-container {
   display: flex;
   flex-direction: column;
-  border: 1px solid white;
-  width: 40%;
+  /* border: 1px solid white; */
+  width: 23%;
   height: 40%;
-  color: var(--secondaryText);
+  color: black;
   padding: 0;
   border-radius: 15px;
+  justify-content: space-around;
 }
 
 .results {
   display: flex;
+  padding: 2px;
+  align-items: center;
   align-content: center;
   justify-content: space-between;
-  border: 1px solid yellow;
-  height: 25%;
+  border: 4px solid #FF3990;
+  background-color: #FFB703;
+  height: 20%;
   font-family: 'roboto';
   border-radius: 15px;
 }
