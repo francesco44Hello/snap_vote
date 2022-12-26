@@ -4,7 +4,7 @@ Snap-vote app made with ReactJS. An App created to help the decision-making proc
 Made using React hooks (useState, useEffect, useContext) and React context.
 
 ### Demo
-* [https://reactweatherapp.com](https://reactweatherapp.com)
+* [https://snap-vote.netlify.app/](https://snap-vote.netlify.app/)
 
 ### Usage:
 ```sh
