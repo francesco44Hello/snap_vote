@@ -5,7 +5,7 @@ Made using React hooks (useState, useEffect, useContext) and React context.
 
 ### Demo
 * [https://snap-vote.netlify.app/](https://snap-vote.netlify.app/)
-Press submit button on the page "to do if time". It was a strecth goal we didn't make it to work due time, will be added evenutally.
+* Press submit button on the page "to do if time". It was a stretch goal we didn't make it to work due to timing, will be added eventually.
 ### Usage:
 ```sh
 $ git clone https://github.com/francesco44Hello/snap_vote.git
