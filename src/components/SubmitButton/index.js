@@ -36,8 +36,6 @@ export default function SubmitFunction({
 			return <button className='submit' data-testid='options-input' onClick={changePage}>Submit</button>
 		case "pros-cons-input":
 			return <button className='submit' onClick={proConSubmit}>Submit</button>
-		case "pros-cons-comment":
-			return <button className='submit' onClick={changePage}>Submit</button>
 		case "pros-cons-vote":
 			return <button className='submit' onClick={proConSubmitVoteFinal}>Submit</button>
 		case "pros-cons-results":

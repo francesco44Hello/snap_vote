@@ -3,7 +3,6 @@ export const pageTypes = [
 	"decision-input",
 	"options-input",
 	"pros-cons-input",
-	"pros-cons-comment",
 	"pros-cons-vote",
 	"pros-cons-results",
 	"weighted-vote-input",

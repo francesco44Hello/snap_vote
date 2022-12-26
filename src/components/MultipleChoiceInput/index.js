@@ -112,10 +112,6 @@ export default function MultipleChoiceInput({
          </div>
     </div>)}
     </div>;
-    case "pros-cons-comment":
-      return <h1>To do if time</h1>;
-    case "weighted-vote-input":
-      return <h1>To do if time</h1>;
     default:
       break;
   }

@@ -9,8 +9,6 @@ export default function PageHeader({decisionTitle, pageType}) {
 			return <h1>{decisionTitle}</h1>
 		case "pros-cons-input":
 			return <h1 className="pros-cons-h1">Write down the pros and cons</h1>
-		case "pros-cons-comment":
-			return <h1>Comment on any pros or cons</h1>
 		case "pros-cons-vote":
 			return <h1>Time to vote!</h1>
 		case "pros-cons-results":
