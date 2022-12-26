@@ -14,20 +14,20 @@ export default function AllOptionsTable({
               <div className="vote-header"><h1>{option.option}</h1></div>
               <div className='options-container'>
                 <>
-                  <h2>Pros</h2>
+                  <h2 className='htwo-pros'>Pros</h2>
                   {option.prosCons.pros.map(pro => <p key={uuidv4()}>{pro}</p>)}
-                  <h2>Cons</h2>
+                  <h2 className='htwo-cons'>Cons</h2>
                   {option.prosCons.cons.map(con => <p key={uuidv4()}>{con}</p>)}
                 </>
               </div>
             </div>
           ))}
-          <div>
+          <>
             <div className="vote-container">
               {votersArr.map((el) => {
                 return (
-                  <div key={uuidv4()}>
-                    <h2>{"User" + el.name}</h2>
+                  <>
+                    <h2 className='htwo-user'>{"User" + el.name}</h2>
                     <select 
                       onChange={proConVote} 
                       name={el.name}
@@ -37,11 +37,11 @@ export default function AllOptionsTable({
                         <option key={uuidv4()}>{option.option}</option>
                       ))}
                     </select>
-                  </div>
+                  </>
                 );
               })}
             </div>
-          </div>
+          </>
         </div>
     default:
       break;

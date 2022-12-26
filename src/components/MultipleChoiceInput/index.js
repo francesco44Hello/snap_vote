@@ -47,8 +47,6 @@ export default function MultipleChoiceInput({
             className="custom-select"
             onChange={selectProCon}
             name={el.option + 1}
-            placeholder="pro"
-            text='pro'
            >
              <option></option>
              <option>Pro</option>
@@ -67,7 +65,7 @@ export default function MultipleChoiceInput({
             name={el.option + 2}
             placeholder="pro"
            >
-             <option>Pro</option>
+             <option></option>
              <option>Pro</option>
              <option>Con</option>
            </select>
