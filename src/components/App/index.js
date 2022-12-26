@@ -9,5 +9,4 @@ function App() {
       </>
   );
 }
-// rfwpgrwe
 export default App;
