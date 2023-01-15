@@ -183,10 +183,11 @@ html,
 
 .pro-con-container>h1 {
   width: 90%;
-  height: 15%;
+  height: 12%;
   border-radius: 10px;
   font-size: large;
   text-align: center;
+  align-items: center;
   align-content: center;
   justify-content: center;
   background-color: var(--primaryAccent);
@@ -196,7 +197,7 @@ html,
   font-size: large;
   font-weight: 900;
   font-family: 'Roboto';
-  padding-top: 7%;
+  padding-top: 6%;
 }
 
 .custom-select {
