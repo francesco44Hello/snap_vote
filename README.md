@@ -5,13 +5,13 @@ Made using React hooks (useState, useEffect, useContext) and React context.
 
 ### Demo
 * [https://snap-vote.netlify.app/](https://snap-vote.netlify.app/)
-* Press submit button on the page "to do if time". It was a stretch goal we didn't make it to work due to timing, will be added eventually.
 ### Usage:
 ```sh
 $ git clone https://github.com/francesco44Hello/snap_vote.git
 $ cd my-app
 $ npm i 
 ```
+Being the App not responsive yet it is suggested to enter a maximum of 4 voters per time. 
 
  
  ### Run your App:
